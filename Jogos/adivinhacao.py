@@ -6,6 +6,7 @@ print("*********************************")
 
 numero_secreto = random.randrange(1,101)
 tentativas = 0
+pontos = 1000
 nivel = 0
 count = 1
 
@@ -25,6 +26,7 @@ else:
 
 
 while (count <= tentativas) :
+    print("*********************************")
     print("Tentativa : {} de {}".format(count, tentativas ))
 
     chute = input("Digite um número: ")
@@ -49,5 +51,10 @@ while (count <= tentativas) :
         else:
             print("Ops!!")
 
+        pontos_perdidos =  abs(numero_secreto - chute)
+        pontos = pontos - pontos_perdidos
 
-print("Fim do Jogo")
+print("\n")
+print("*********************************")
+print("Fim do Jogo, o número secreto era: {}".format(numero_secreto))
+print("Sua pontuação: {}".format(pontos))
