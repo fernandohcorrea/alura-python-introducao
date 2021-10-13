@@ -4,7 +4,7 @@ def jogar():
     print("Bem vindo ao jogo de forca")
     print("*********************************")
 
-    palavra_secreta = "queijo"
+    palavra_secreta = "banana"
 
     enforcado = False
     acertou = False
@@ -12,11 +12,21 @@ def jogar():
 
     while ( not enforcado and not acertou ):
         print("*********************************")
-        chute = input("Digite uma letra: ")
+        chute = str(input("Digite uma letra: "))
+        chute = chute.strip()
+        chute = chute.upper()
 
-        if (chute == 'q') :
-            acertou = True
+        if ( len(chute) > 1 ) :
+            print("Digite apenas uma letra")
+            continue
 
+        achou = False
+        idx = 0
+
+        for letra in palavra_secreta :
+            if(chute == letra.upper()) :
+                print("Encontrei a letra {} na posição {}".format(letra, idx))
+            idx = idx + 1
 
 
 
