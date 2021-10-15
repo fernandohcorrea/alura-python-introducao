@@ -5,12 +5,14 @@ def jogar():
     print("*********************************")
 
     palavra_secreta = "banana"
+    letras_acertadas = ['_','_','_','_','_','_',]
 
     enforcado = False
     acertou = False
     chute = ""
 
     while ( not enforcado and not acertou ):
+        print(letras_acertadas)
         print("*********************************")
         chute = str(input("Digite uma letra: "))
         chute = chute.strip()
@@ -20,13 +22,17 @@ def jogar():
             print("Digite apenas uma letra")
             continue
 
-        achou = False
         idx = 0
-
         for letra in palavra_secreta :
             if(chute == letra.upper()) :
-                print("Encontrei a letra {} na posição {}".format(letra, idx))
+                print("Encontrei a letra '{}' na posição: {}".format(chute, (idx+1)))
+                letras_acertadas[idx] = chute
             idx = idx + 1
+
+
+        if ('_' not in  letras_acertadas) :
+            print(letras_acertadas)
+            break
 
 
 
