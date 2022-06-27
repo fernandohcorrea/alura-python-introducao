@@ -6,7 +6,7 @@ url = url.strip()
 
 # Validação 
 if url == "":
-    raise ValueError('a Urla está Vazia');
+    raise ValueError('a Url está Vazia');
 
 # Separa base e parâmetros
 indice_interrogacao = url.find('?')
