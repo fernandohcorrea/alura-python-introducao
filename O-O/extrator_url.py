@@ -1,3 +1,4 @@
+import re
 class EstratorURL:
     def __init__(self, url:str):
         self.url = self.sanitiza_url(url)
@@ -10,8 +11,12 @@ class EstratorURL:
             return ""
 
     def valida_url(self):
-        if not self.url:
-            raise ValueError('A url está invalida')
+        ereg = re.compile('(http(s)?://)?(www.)?bytebank.com(.br)?/cambio')
+
+        match = ereg.match(self.url)
+
+        if not match :
+            raise ValueError('A URL não é válida')
 
     def get_url_base(self):
         indice_interrogacao = self.url.find('?')
