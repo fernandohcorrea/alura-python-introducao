@@ -41,7 +41,30 @@ class EstratorURL:
 
         return valor
 
+    def __len__(self) :
+        return len(self.url)
 
-extrator_url = EstratorURL("bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar")
+    def __str__(self) :
+        data = [
+            "Url: " + self.url,
+            "Url Base: " + self.get_url_base(),
+            "Parâmetros: " + self.get_url_parametros()
+        ]
+        return "\n".join(data)
+
+    def __eq__(self, __o: object) :
+        return self.url == __o.url
+
+url="bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
+
+extrator_url = EstratorURL(url)
+extrator_url2 = EstratorURL(url)
+print("Comparando Objetos: ", extrator_url == extrator_url2 )
+
+
+print("Tamanho da Url: ", len(extrator_url))
+print(extrator_url)
+
 valor_quetidade = extrator_url.get_valor_parametro("quantidade");
+
 print(valor_quetidade)
