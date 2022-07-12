@@ -65,6 +65,6 @@ print("Comparando Objetos: ", extrator_url == extrator_url2 )
 print("Tamanho da Url: ", len(extrator_url))
 print(extrator_url)
 
-valor_quetidade = extrator_url.get_valor_parametro("quantidade");
+valor_quatidade = extrator_url.get_valor_parametro("quantidade");
 
-print(valor_quetidade)
+print(valor_quatidade)
